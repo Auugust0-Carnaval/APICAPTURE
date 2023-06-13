@@ -4,11 +4,7 @@ const fs = require('fs')
 const router = express.Router();
 router.use(express.json());
 const multer = require('multer');
-
 const upload = multer({dest:'./uploads' });
-
-
-
 
 //metodo que busca todas as fotos
 
@@ -16,6 +12,7 @@ router.get('/photos', (req, res) =>{
     Photo.findAll()
         .then((photos) =>{
             res.json(photos);
+            console.log(photos);
         })
         .catch((error) =>{
             res.status(500).json({error: 'erro ao obter fotos'});
@@ -43,5 +40,4 @@ router.post('/api/photos', upload.single('Img'), (req, res) => {
     }
   });
   
-
 module.exports = router;

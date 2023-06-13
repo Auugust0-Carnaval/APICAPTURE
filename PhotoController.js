@@ -1,6 +1,9 @@
 const Photo = require('./Photo');
 const fs = require('fs'); // modulo de leitura de arquivos binarios
 
+const express = require('express');
+const app = express();
+
 const CreatePhoto = async (title, description, imgPath) =>{
     try {
         //leitura do arquivo
@@ -20,4 +23,4 @@ const CreatePhoto = async (title, description, imgPath) =>{
     }
 }
 
-CreatePhoto('Finn and jake', 'filme predileto', './img/Finn.jfif');
+// CreatePhoto('Finn and jake', 'filme predileto', './img/Finn.jfif');
